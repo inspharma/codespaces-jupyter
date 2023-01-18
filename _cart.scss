@@ -1,0 +1,319 @@
+/*================ Box Cart  ===============*/
+$close-button-color: #fff;
+
+.box-cart {
+	position: relative;
+	.btn-danger {
+		border: none;
+		i {
+			font-size:20px;
+			line-height:1em;
+			height:20px;
+		}
+	}
+	.btn-danger,.btn-danger:focus {
+		border: 0;
+		padding: 0;		
+		font-size: 13px;
+		&:focus {
+			box-shadow: none;
+		}
+	}	
+	a:hover img {
+		opacity: .85;
+	}
+	.btn {
+		margin-bottom: 7px;
+	}
+}
+
+/*================  Cart  ===============*/
+.cart {
+	position: relative;
+	> button {
+		text-align:inherit;
+		line-height:1.2em;
+		i, strong, span {
+			vertical-align: middle;
+		}
+		i {
+			font-size:35px;
+			float:left;
+			line-height:1em;
+			display:inline-block;
+			color:$primary;
+			margin:7px 17px 0 0;
+		}
+		.cart-total3, .cart-total2 {
+			display:inline-block;
+		}
+		.cart-total, .cart-total3 {
+			display:none;
+		}
+		strong, b {
+			color:inherit;
+		}
+		strong {
+			color: $textPrimary;
+			font-size: 18px;
+			line-height: 24px;
+			font-weight: 500;
+		}
+		span {
+			display: block;
+			font-size: 18px;
+			margin-top:4px;
+			white-space: nowrap;
+			font-weight: 300;
+		}
+		&:hover, &.active {
+			color:$primary;
+		}
+	}
+	.cart-remove-btn{
+		margin-bottom: 10px;
+		margin-left: 5px;
+		&:before, > span {
+			vertical-align: middle;
+		}
+		&:before {
+			margin-right: 5px;
+		}
+	}
+}
+
+html[lang="ru"] {
+	.cart > button {
+		.cart-total3, .cart-total2 {
+			font-size: 13px;
+			margin-top: 3px;
+		}
+	}
+}
+
+/*================  Cart DropDown ===============*/
+.cart .toggle_cont {
+	z-index: 1001;
+	min-width: 290px;
+	padding: 15px 10px 10px;
+	max-height: 500px;
+	top:50px;
+	font-size:14px;
+	line-height:1.2em;
+	overflow-y: auto;
+	overflow-x: hidden;
+	h1, h2, h3, h4, h5, h6 {
+		color:#fff;
+	}
+	.text-empty {
+		margin-top:5px;
+	}
+	.name {
+		font-size:12px;
+		line-height:1.4em;
+		a {
+			&, &:visited {
+				color: #fff;
+			}
+			&:hover, &:focus, &:active {
+				color: $baseColor;
+			}
+		}
+	}
+	.table > tbody > tr {
+		> td {
+			padding-left:4px;
+			padding-right:4px;
+		}
+	}
+	h3 {
+		margin-bottom: 15px;
+	}
+	.image a {
+		overflow:hidden;
+		margin:3px 0 0 0;
+		background:#fff;
+	}
+	img {
+		max-width: 50px;
+		background-color:#fff;
+	}
+	table {
+		margin-bottom: 10px;
+	}
+	.btn, .btn-primary {
+		margin-bottom:10px;
+		vertical-align:top;
+		padding-left:12px;
+		padding-right:12px;
+	}
+	.btn-danger {
+		padding-left:0;
+		padding-right:0;
+	}
+	.btn-primary:first-child {
+		margin-right:5px;
+	}
+	button.btn-danger {
+		&, &:visited {
+			color: $close-button-color;
+			background: none;
+			border:none;
+		}
+		&:hover, &:focus, &:active,
+		&:active:focus, 
+		&:active:hover {
+			color: $baseColor;
+			background: none;
+		}
+	}
+}
+
+.cart {
+	.toggle_cont table.total {
+		margin-top:13px;
+		margin-bottom:23px;
+		td {
+			border: none;
+			padding: 2px;
+		}
+	}
+	.table > tbody > tr > td {
+		padding-bottom:6px;
+	}
+	.price-cart {
+		display:inline-block;
+		width:70px;
+		padding:0 6px 0 0;
+		i {
+			font-size:10px;
+			font-style:normal;
+		}
+		b {
+			font-weight:400;
+			margin-left:5px;
+			float:right;
+		}
+	}
+	.table > tbody > tr > td{
+		border-top: none;
+	}
+}
+
+.cart .table.total tr:last-child td strong,
+.cart .table.total tr:last-child td {
+	strong{
+		color:$baseColor;
+	}
+}
+
+/*-----------------------------------------*/
+
+@media (min-width: 768px) {
+	.cart {
+		display: inline-block;
+		height: 100%;
+		> button {
+			height: 100%;			
+		}
+	}
+	header .box-cart {
+		margin:-1px 3px 5px 35px;
+		[dir="rtl"] {
+			margin-left:3px;
+			margin-right:35px;
+		}
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	header .box-cart {
+		margin-left: 25px;
+		margin-top: 5px;
+	}
+	.cart > button {		
+		strong {
+			font-size: 16px;
+			line-height: 21px;
+		}
+	}
+	html[lang="ru"] {
+		.cart > button {
+			.cart-total3, .cart-total2 {
+				font-size: 11px;
+				margin-top: 3px;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	header .box-cart {
+		margin-top: 9px;
+		margin-left: 15px;		
+		margin-right: 0;
+		[dir="rtl"] & {
+			margin-left: 0;		
+			margin-right: 15px;
+		}
+	}
+	html[lang="ru"] {
+		.cart > button {
+			.cart-total3, .cart-total2 {
+				font-size: 10px;
+				margin-top: 3px;
+			}
+		}
+	}
+	.cart > button {
+		line-height:1em;
+		vertical-align:top;
+		i {
+			font-size: 18px;
+			margin-top:0;
+			margin-right:7px;
+			[dir="rtl"] & {
+				margin-right:0;
+				margin-left:7px;
+			}
+		}
+		strong {
+			display: inline-block;
+			margin-top: 1px;
+			margin-bottom: 1px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+		.cart-total, .cart-total2, .cart-total3 {
+			font-size: 11px;
+			margin-top: 3px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	div.cart {
+		position: fixed;
+		top: 0;
+		margin: 0;
+		> button {
+			i {
+				font-size:23px;
+				margin:0;
+			}
+			.cart-total, .cart-total2, strong {
+				display: none;
+			}			
+		}
+		.price-cart {
+			min-width:0;
+		}
+		.toggle_cont {
+			max-height: 300px;
+			overflow: auto;
+			top:100%;
+			right: 0;
+			@include border-radius(0);
+		}
+	}
+}

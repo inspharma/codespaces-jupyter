@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+//                       Floated menu
+//--------------------------------------------------------------
+$item-margin: 20px;
+
+.sf-menu{
+	@include clearfix;
+  > li {
+    position: relative;
+	&.last-child {
+		 margin-right: 0;
+	}
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}

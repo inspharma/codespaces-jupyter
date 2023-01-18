@@ -1,0 +1,172 @@
+//--------------------------------------------------------------
+//                    Search Form
+//--------------------------------------------------------------
+// input variables
+$form-bg: #fff;
+$form-width: 503px;
+$form-height: 45px;
+$form-border: 2px solid $primary;
+$form-color: $textPrimary;
+
+// button variables
+$form-submit-color: $white;
+$form-submit-hover: $white;
+
+.search{
+  margin-top: -2px;
+  position: relative;
+  padding: 8px;
+  border-top-left-radius: $baseBorderRadius;
+  border-top-right-radius: $baseBorderRadius;
+  input[type="text"] {
+    color: $form-color;
+    display: block;
+    margin: 0;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    width: $form-width;
+    height: $form-height;
+    padding: (($form-height - 22px) / 2) 120px (($form-height - 22px) / 2) 20px;
+    background: $form-bg;
+    border: $form-border;
+    @include border-radius($baseBorderRadius);
+    @include box-sizing(border-box);
+    &:focus{
+      outline: none;
+      @include box-shadow($baseBoxShadow);
+    }
+    &::-webkit-input-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-moz-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &::-moz-placeholder{
+      color: $form-color;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder  {
+      color: $form-color;
+      opacity: 1;
+    }
+  }
+
+  button, button:focus, button:active {
+    @include reset-button;
+	@media (min-width: 768px) {
+		@include transition(.5s all ease);
+	}
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    right: 8px;
+    color: $form-submit-color;
+    font-size: 15px;
+    padding: 0 28px 0 30px;
+    line-height: $form-height;
+    background: $primary;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-top-right-radius: $baseBorderRadius;
+    border-bottom-right-radius: $baseBorderRadius;
+  }
+
+  button:hover, button:focus:hover, button:active:hover {
+    color: $form-submit-hover;
+    background: $textPrimary;
+  }
+}
+
+//--------------------------------------------------------------
+//                    Responsive Search Form Layout
+//--------------------------------------------------------------
+
+@media (max-width: 1199px) {
+  .search input[type="text"] {
+    width: 285px;
+  } 
+} 
+
+//--------------------------------------------------------------
+//                    Live Search
+//--------------------------------------------------------------
+#livesearch_search_results {
+  margin: 3px 0 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  background-color: $dropdown-bg;
+  list-style-type: none;
+  z-index: 12;
+  font-size: 14px;
+  border-radius: $baseBorderRadius;
+  li{
+    vertical-align: middle;
+    padding: 10px;
+    @include clearfix;
+    + li {
+      border-top: 1px solid $headerBg;
+    }
+    img{
+      float: left;
+      margin-right: 10px;
+      &.loading{
+        background: #F5F5F5;
+      }
+    }
+    &:hover,&.highlighted{
+      background-color: $primary;
+      a,a:visited{
+        color: #FFF;
+      }
+    }
+
+  }
+  a,a:visited{
+    display: block;
+    padding: 5px;
+    color: #fff;
+    @include clearfix;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.search {
+		button {
+			&, &:focus, &:active {
+				padding-left:12px;
+				padding-right:12px;
+			}
+		}
+		input[type="text"] {
+			width: 220px;
+			padding-left:15px;
+			padding-right:90px;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px), (max-width: 479px) {
+  #livesearch_search_results li img{
+    display: none!important;
+  }
+}
+
+@media (max-width: 767px) {
+	.search {
+		padding-left:0;
+		padding-right:0;
+		width:100%;
+		input[type="text"] {
+			width: 100%;
+		}
+		button, button:focus, button:active {
+			right: 0;
+		}
+	}
+}

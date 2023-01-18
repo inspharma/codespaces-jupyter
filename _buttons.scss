@@ -1,0 +1,380 @@
+/*========================================================
+                        Buttons
+=========================================================*/
+#button-search {
+	+ h2 {
+		margin-top: 15px;
+	}
+}
+
+.buttons {
+	margin: 1em 0;
+	@include clearfix;
+	.btn{
+		margin-bottom: 10px;
+		&:hover{
+			@include box-shadow(none);
+		}
+		i, span {
+			vertical-align:top;
+		}
+		i{
+			margin: 0 5px;
+			line-height:16px;			
+			display: inline-block;
+		}
+	}
+	.pull-left {
+		margin-right:10px;
+	}
+	.pull-right {
+		[for="agree1"] + .btn {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.btn.active, .btn:active {
+	box-shadow:none;
+}
+
+.input-group-btn .btn {
+	padding: 7px 12px;
+	i {
+		font-size: 15px;
+		line-height: 18px;
+	}
+}
+
+.agree {
+	b {
+	@media (min-width: 768px) {
+		@include transition(.3s all ease);
+	}
+	}
+	&:hover b {
+		color: $primary;
+	}
+}
+
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+	color:#fff;
+	background-color: $textPrimary;
+	&:hover {
+		color:#fff;
+		background-color: $textPrimary;
+	}
+}
+
+.btn:active:focus, 
+.btn:active:hover,
+.btn-default.active.focus, 
+.btn-default.active:focus, 
+.btn-default.active:hover, 
+.btn-default:active.focus, 
+.btn-default:active:focus, 
+.btn-default:active:hover, 
+.open>.dropdown-toggle.btn-default.focus, 
+.open>.dropdown-toggle.btn-default:focus, 
+.open>.dropdown-toggle.btn-default:hover {
+	color:#fff;
+	background-color: $textPrimary;
+}
+
+/* ================   Default Buttons BEGIN   =============== */
+.btn, .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+	font-size: 15px;
+	line-height:25px;
+	text-transform:uppercase;
+	font-weight:700;
+	background: none;
+	border: none !important;
+	text-shadow: none;
+	padding: 10px 15px;
+	@media (min-width: 992px) and (max-width: 1199px) {
+		padding-left:10px;
+		padding-right:10px;
+	}
+	@include border-radius(3px);
+	outline: none;
+	i {
+		display:inline-block;
+		font-size: 25px;
+		line-height:25px;
+		height:25px;
+		@media (min-width: 768px) {
+			@include transition(.3s all ease);
+		}
+	}
+	i, span {
+		vertical-align:top;
+		margin-left:3px;
+		margin-right:3px;
+		@media (min-width: 992px) and (max-width: 1199px) {
+			margin-left:1px;
+			margin-right:1px;
+		}
+	}
+	&, &:visited {
+		color:#fff;
+		background-color: #5e5e5e;
+	}
+	&:hover, &:focus, &:active {
+		color:#fff;
+		background-color: $textPrimary;	
+		outline: none !important;
+	} 
+}
+
+.btn-primary {
+	&, &:visited {
+		color:#fff;
+		background-color: $primary;
+	}
+	&:hover, &:focus, &:active,
+	&:active:focus, 
+	&:active:hover {
+		color:#fff;
+		background-color: $textPrimary;
+		i {
+			color:$primary;
+		}
+	}
+}
+
+/*================   Product Buttons BEGIN   ===============*/
+
+.view-all{
+  padding: 16px 6px 19px 5px;
+  text-align: right;
+ [dir="rtl"] & {
+	text-align: left;
+ }
+  a{
+    padding: 4px 8px 4px 16px;
+    font-weight: 500;
+    color: $primary;
+    border-radius: $baseBorderRadius;
+    border: 1px solid $borderColor;
+    &:after{
+      content: '\e5cc';
+      display: inline-block;
+      font-family: $material;
+      color: $textPrimary;
+      font-size: 18px;
+      line-height: $baseLineHeight;
+      font-weight: 400;
+      margin-left: 5px;
+      margin-top: 1px;
+      vertical-align: bottom;
+      float: right;
+	  [dir="rtl"] & {
+		margin-left: 0;
+		margin-right: 5px;
+		float: left;
+	  }
+	  @media (min-width: 768px) {
+		@include transition(all .3s ease);
+	  }
+    }
+    &:hover{
+      color: $textPrimary;
+      &:after {
+        color: $primary;
+      }
+    }
+  }
+  @media (max-width: 1199px) {
+    padding-right: 5px;
+    a:after{
+    }
+  }
+}
+
+.product-btn {
+	background: none;
+	padding: 0;
+	line-height:19px;
+	i {
+		display:inline-block;
+		font-size:16px;
+		line-height:inherit;
+		height:19px;
+		margin-right: 8px;
+		color: $primary;
+		@media (min-width: 768px) {
+			@include transition(.3s all ease);
+		}
+		vertical-align:top;
+	}
+	span {
+		vertical-align:top;
+	}
+	&, &:visited {
+		color: $baseColor;
+	}
+	&:hover, &:focus, &:active {
+		color: $textPrimary;
+		i {
+			color: $textPrimary;
+		}
+	}
+	&:first-child{
+		margin-right:10px;
+	}
+}
+
+/* ================   Product page buttons  =============== */
+.product-buttons {
+	@include clearfix;
+	margin: 10px 0 10px;
+	padding: 0;
+	li {
+		display: inline-block;
+		margin-right: 10px;
+		list-style: none;
+		button {
+			display: inline-block;
+			background: none;
+			color: $primary;
+			padding: 0;
+			&:hover,
+			&:focus {
+				color: $baseColor;
+				background: transparent;
+			}
+			&:active {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.btn-icon {
+	font-size:16px;
+	line-height:45px;
+	width:43px;
+	height:45px;
+	display:inline-block;	
+	text-align:center;
+	@include border-radius(2px);
+	@media (min-width: 768px) {
+		@include transition(.3s all ease);
+	}
+	&, &:visited {
+		color: #fff;
+		background: $primary;
+	}
+	&:hover, &:focus, &:active {
+		color: #fff;
+		background-color: $textPrimary;
+	}
+}
+
+#button-cart {
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: middle;
+	&:disabled {
+		pointer-events: none;
+		opacity: .5;
+	}
+}
+
+/* ================   Tooltip  ================= */
+.tooltip-inner {
+	background: $primary;
+}
+[class][class].tooltip-arrow {
+	border-top-color: $primary;
+}
+/*========================================================
+                 Responsive styles Buttons
+=========================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	.account-wishlist table td .btn {
+		padding: 10px;
+	}
+	.btn, .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+		font-size: 14px;
+		i {
+			font-size: 22px;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.table-bordered > tbody > tr > .text-right {
+		padding: 5px;
+	}
+	.account-wishlist table td .btn {
+		padding: 6px;
+	}
+	.btn, .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+		font-size: 11px;
+		line-height: 20px;
+		letter-spacing: 0;
+		padding-left:10px;
+		padding-right:10px;
+		i {
+			font-size: 18px;
+			line-height:18px;
+			height:18px;
+		}
+	}
+	.btn-icon {
+		line-height: 35px;
+		width: 35px;
+		height: 35px;
+	}
+}
+
+@media (max-width: 767px) {
+	.btn, .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+		font-size: 13px;
+		i {
+			font-size: 22px;
+		}
+	}
+	#grid-view,#list-view {
+		display: none;
+	}
+	.product-thumb .image > .quickview {
+		display: none;
+	}
+	.product-thumb .image .cart-button {
+		margin-left:-37px;
+	}
+	.quickview {
+		display:none !important;
+	}
+}
+
+
+@media (max-width: 479px) {
+	.buttons {
+		.pull-left {			
+			margin-left: 0;
+			margin-right:10px;
+		}
+		.pull-right {
+			float: none !important;
+			margin-left: 0;
+		}
+	}
+	#product button#button-cart {
+		display: block;
+		margin: 15px 0 20px;
+	}
+}
+
+@media (max-width: 410px) {
+	.account-address {
+		.table td a {
+			display: block;
+			+ a {
+				margin-top: 5px;
+			}
+		}
+	}
+}
