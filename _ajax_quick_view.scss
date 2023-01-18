@@ -1,0 +1,188 @@
+/* ===================   Product Quickview   =================== */
+.ajax-quickview,
+.ajax-quickview-images,
+.ajax-quickview-images > ul,
+.ajax-quickview-images > ul > li {
+	height: 100%;
+}
+
+.ajax-quickview-images,
+.ajax-quickview-cont-wrap {
+	width: 50%;
+}
+
+.ajax-quickview-cont {
+	* + .name {
+		margin-top:15px;
+	}
+	h3 {
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+}
+.ajax-quickview-images {
+	position: relative;
+	float: left;	
+	> ul {
+		margin: 0;
+		background:darken(#f7f7f7,2%);
+		overflow:hidden;
+		@include border-radius(4px 0 0 4px);
+		> li {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+			opacity: 0;
+			text-align: center;
+			overflow: hidden;
+			@include transition(opacity .5s ease);
+			> img {
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include transform(translate(-50%, -50%));
+				max-height: 101%;
+				max-width: none;
+				width: auto;
+			}
+			&.active {
+				z-index: 2;
+				opacity: 1;
+			}
+		}
+	}
+	.next-img,
+	.prev-img {
+		position: absolute;
+		top: 50%;
+		z-index: 5;		
+		font-size: 28px;
+		line-height: 1em;
+		height: 28px;
+		color: #ddd;
+		@include transform(translateY(-50%));		
+		@include transition(all .3s ease);
+		&:hover {
+			color: $baseColor;
+		}
+	}
+	.next-img {
+		right: 15px;
+	}
+	.prev-img {
+		left: 15px;
+	}
+}
+.ajax-quickview-cont-wrap {
+	float: right;
+	max-height: 100%;
+	overflow-y: auto;
+	.form-horizontal .form-group {
+		margin-left:0;
+		margin-right:0;
+	}
+	.ajax-quickview-cont {
+		padding: 30px 50px;
+		.sale, .new-pr, .discount {
+			position: static;
+		}
+		.price-old {
+			margin-left:0;
+			margin-right:5px;
+		}
+		.product-options {
+			border-bottom: none;
+		}
+		.price, .model, .manufacturer, .rating {
+			margin-bottom:10px;
+		}
+		.btn, .btn-primary {
+			vertical-align: middle;
+			margin-top:5px;
+			margin-bottom:5px;
+		}
+		.counter {
+			+ .btn-primary {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+.ajax-quickview-cont {
+	.counter, .counter:focus, .counter:hover, .counter:focus:hover {
+		background:none !important;
+	}
+}
+
+.fancybox-inner {	
+	.option-radio .radio, .option-radio .radio + .radio {
+		margin:0 10px 10px 0;
+		padding:0;
+	}
+	input[type="radio"] + label:before {
+		background-color: darken(#f3f4f5, 5%);
+	}
+}
+
+.ajax-overlay {
+	input[type="radio"] + label:before {
+		background-color: darken(#f3f4f5, 5%);
+	}
+}
+
+.ajax-quickview-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+	background: rgba(#000, .25);
+	opacity: 0;
+	visibility: hidden;
+	.ajax-quickview-overlay__preloader {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		@include border-radius(50%);
+		display: inline-block;
+		width: 70px;
+		height: 70px;		
+		background: url(../image/lazy-loader.gif) no-repeat center center #fff;
+	}
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.fancybox-skin {
+	color:#777;
+	background:#fff;
+}
+.fancybox-opened .fancybox-skin {
+	@include box-shadow(0 2px 12px rgba(#000,.15));
+}
+
+.fancybox-skin:hover .fancybox-nav span {
+	visibility: visible;
+}
+
+.fancybox-nav {
+	height: 40px;
+	top: 50%;
+	width: 40px
+}
+
+.fancybox-next {
+	right: -60px;
+}
+
+.fancybox-prev {
+	left: -60px;
+}

@@ -1,0 +1,186 @@
+//--------------------------------------------------------------
+//                    NewsLetter Popup Module
+//--------------------------------------------------------------
+
+#zemez-newsletter-popup-form {
+	@include clearfix;
+}
+.newsletter-popup-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	background: rgba(#000,.25);
+	padding-top: 100px;
+}
+
+.newsletter-popup {
+	position: relative;
+    width: 570px;
+    height: 370px;
+    margin: 0 auto;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    padding: 86px 55px 40px;
+    text-align: center;
+	font-weight:400;
+	.zemez-login-form {
+		position: relative;
+		@include clearfix;
+		margin-top: 49px;
+		margin-left: 19px;
+		margin-right: 19px;
+		font-size:0;
+		line-height:0;
+		input {
+			width: 72%;
+			height: 45px;
+			float: left;
+			@include box-sizing(border-box);
+			border: 2px solid $primary;
+			border-right:none;
+			font-size: 14px;
+			line-height: 18px;
+			padding-top:11px;
+			padding-left:10px;
+			vertical-align:top;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			&::-webkit-input-placeholder{
+				color:#777;
+				opacity: 1;				
+			}
+			&:-moz-placeholder{
+				color:#777;
+				opacity: 1;				
+			}
+			&::-moz-placeholder{
+				color:#777;
+				opacity: 1;				
+			}
+			&:-ms-input-placeholder  {
+				color:#777;
+				opacity: 1;				
+			}
+		}
+	}
+	.logo img {
+		display: inline-block;
+	}
+	h2 {
+		font:500 40px/40px $baseFontFamily;
+		margin: 0;
+		color: $primary;
+		text-transform: none;
+		+ p {
+			margin-top:18px;			
+		}
+	}
+	p {
+		font-size:14px;
+		line-height:24px;
+		color:$baseColor;
+		margin-bottom:0;
+	}
+	&-btn {
+		margin-top: 0;
+		border: none;
+		outline: none;
+		height: 45px;
+		display:inline-block;
+		vertical-align:top;
+		float: left;
+		display: block;
+		font-size: 15px;
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		width: 28%;
+	}
+	&-close-btn {
+		background: none;
+		outline: none;
+		border: none;
+		position: absolute;
+		right: 18px;
+		top: 15px;		
+		font-size: 20px;
+		line-height: 20px;
+		&, &:visited {
+			color: $textPrimary;
+		}
+		&:hover, &:focus, &:active {
+			color: $primary;
+		}
+	}
+}
+
+html[lang="ru"] .newsletter-popup {
+	.zemez-login-form {
+		input {
+			&::-webkit-input-placeholder{
+				font-size: 12px;
+			}
+			&:-moz-placeholder{
+				font-size: 12px;		
+			}
+			&::-moz-placeholder{
+				font-size: 12px;			
+			}
+			&:-ms-input-placeholder  {
+				font-size: 12px;			
+			}
+		}
+		.newsletter-popup-btn {
+			font-size: 10px;
+		}
+	}
+}
+
+html[lang="de"] .newsletter-popup {
+	.zemez-login-form {		
+		.newsletter-popup-btn {
+			font-size: 12px;
+		}
+	}
+}
+
+.newsletter-popup .newsletter-error,
+.newsletter-popup .newsletter-success{
+	display: block;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 16px;
+	line-height: 20px;
+	position: absolute;
+	top: 100%;
+	@include transition(.3s all ease);
+}
+
+.newsletter-popup {
+	.newsletter-error {
+		color: #bc2029;
+	}
+	.newsletter-success {
+		color: #55C65E;
+	}
+}
+
+//--------------------------------------------------------------
+//          NewsLetter Popup Module Responsive Layout
+//--------------------------------------------------------------
+
+.tablet, .mobile {
+	.newsletter-popup-wrap{
+		display: none !important;
+	}
+}
+
+@media (max-width: 767px){
+	.newsletter-popup-wrap{
+		display: none !important;
+	}
+}

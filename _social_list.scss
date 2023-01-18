@@ -1,0 +1,77 @@
+/* ===================   Social list   =================== */
+$facebookBg       : #3c5b9b;
+$youtubeBg        : #fe3432;
+$googleBg         : #f63d27;
+$twitterBg        : #2daae1;
+$pinterestBg      : #bd2126;
+$instagramBg      : #125688;
+$vimeoBg          : #17b3e8;
+
+.social-list {
+	display:inline-block;
+	margin-bottom:0;
+	i {
+		text-align: center;
+	}
+	li {
+		display:inline-block;
+		float:left;
+		+ li {
+			margin:0 0 0 12px;
+		}
+	}
+	a {
+		display: inline-block;
+		width: 54px;
+		height: 54px;
+		font-size: 25px;
+		line-height: 54px;
+		text-align: center;
+		@include border-radius(50%);
+		border: 1px solid $borderColor;
+		@include transition(.3s all ease);
+		&, &:visited {
+			background: $stockBg;
+			color: $primary;
+		}
+		&:hover, &:focus, &:active {
+			background: $primary;
+			color: $white;
+			border-color: $primary;
+		}
+	}
+}
+
+.social-block .box-heading {
+	display:none;
+}
+
+.module-social .col-sm-3 {
+	width:100%;
+	padding-left:0;
+	padding-right:0;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.social-list a {
+		width: 45px;
+		height: 45px;
+		font-size: 20px;
+		line-height: 45px;
+		&:hover, &:focus, &:active {
+			font-size:25px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.social-list li {
+		float: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.social-list li + li {
+		margin-left: 3px;
+	}
+}

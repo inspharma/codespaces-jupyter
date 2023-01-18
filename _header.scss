@@ -1,0 +1,468 @@
+$dropdown-bg: lighten($primary, 10%);
+
+header {
+	position:relative;
+	.logo {
+		position:relative;
+		z-index:2;
+		float: left;
+		text-align:left;
+		margin-top:2px;
+		&:after {
+			display: none;
+		}
+		a {
+			display:inline-block;
+			max-width:100%;
+		}
+	}
+	h1.logo {
+		font-size:24px;
+		line-height:29px;
+	}
+	.box-language + .box-currency,
+	.box-currency + .box-language {
+		margin-left: 26px;
+	}
+	.menu-line {
+      margin-top: 22px;
+      margin-bottom: 32px;
+	  .home-page & {
+		 margin-bottom: 42px;
+	  }
+      border-top: 1px solid $borderColor;
+      @include box-shadow(0 5px 8px rgba($borderColor, .75));
+    }	
+}
+@media (min-width: 768px) {
+	nav.nav {
+		line-height:0;
+		> .toggle_cont > li {		
+			padding: 13px 30px 19px;
+			display: inline-block;
+			float: left;
+			> a {
+				line-height:1.2em;
+			}
+			border-right: 1px solid $borderColor;			
+			&:first-child {
+				border-left: 1px solid $borderColor;
+			}			
+			&.pull-right {
+				border-left: 1px solid $borderColor;
+			}
+			[dir="rtl"] & {
+				float: right;
+				border-right: none;			
+				border-left: 1px solid $borderColor;			
+				&:first-child {
+					border-right: 1px solid $borderColor;
+				}			
+				&.pull-right {
+					border-right: 1px solid $borderColor;
+				}
+			}
+		}
+	}
+}
+
+.header-top {
+	padding-top:20px;
+	padding-bottom:19px;
+}
+
+.header-settings {
+	font-size:14px;
+	color:#777;	
+	.tx-phone {
+		font-size: 28px;
+		line-height: 34px;
+		font-weight: 500;
+		color: $textPrimary;
+		i {
+			font-size:34px;
+			line-height:.8em;
+			font-weight:400;
+			color:$primary;
+			display:inline-block;
+			vertical-align:bottom;
+		}
+		a {
+			&, &:visited, &:focus {
+				color: inherit;
+			}
+			&:hover {
+				color:$primary;
+			}
+		}
+	}
+}
+
+.header-wishlist {
+	margin:1px 0 5px 28px;
+	i {
+		float: left;
+		display:inline-block;
+		font-size: 35px;
+		line-height: 1em;
+		color: $primary;
+		margin: 10px 13px 0 0;
+	}
+	strong {
+		margin-top: -2px;
+		color: $textPrimary;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+	span {
+		font-size: 18px;
+		display:inline-block;
+		margin-top:-2px;
+		white-space: nowrap;
+	}
+}
+
+html[lang="ru"] {
+	.header-wishlist span {
+		font-size: 13px;
+	}
+}
+
+/*================  Toggle ===============*/
+.toggle-wrap {
+	position: relative;
+}
+.toggle {
+  &_cont {
+    display: none;
+    background: $dropdown-bg;
+    @include box-shadow($baseBoxShadow);
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 140px;
+    z-index: 20;
+    color: #fff;
+    border-radius: $baseBorderRadius;
+    > li {
+      > a, > button {
+        text-align: left;
+        width: 100%;
+        display: block;
+        padding: 5px 5px 5px 10px;
+        text-transform: capitalize;
+        font-size: 13px;
+		line-height:$baseLineHeight;
+        color: #FFF;
+        &:hover {
+          background: $primary;
+          color: #FFF;
+        }
+      }
+      + li{
+        border-top: 1px solid $headerBg;
+      }
+    }
+    ul {
+      text-align: right;
+      font-size: 16px;
+    }
+  }
+}
+
+nav.nav ul.toggle_cont {
+	@include box-shadow(none);
+}
+
+/*================   Top Links style   ===============*/
+
+header .nav {
+	@media (min-width: 768px) {
+		width:100%;
+		> .toggle {
+			display: none;
+		}
+		> .toggle_cont {
+			display: block !important;
+			position: static;
+			padding: 0;
+			margin: 0;			
+			background: none;
+			@include border-radius(0);
+			width: auto;
+			.toggle_cont {
+				overflow:hidden;
+				width:160px;
+			}
+			> li {
+				display: inline-block;
+				position:relative;
+				> a {
+					display: inline-block;
+					padding: 0;
+					font-size:18px;
+					line-height:24px;
+					text-transform:none;
+					color:$textPrimary;
+					font-weight:500;
+					i {
+						height:24px;
+						margin-right: 10px;
+						float: left;
+					}
+					&.current, &:hover {	
+						color:$primary;
+						background:none;
+					}
+				}
+				&.pull-right > a {
+					color:$primary;
+					&:after {
+						display:none;
+					}
+					&.current, &:hover {	
+						color:$baseColor;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		.toggle-wrap {
+			.toggle {
+				display: none;
+			}
+			.toggle_cont {
+				display: block !important;
+				height: auto !important;
+				position: static;
+				padding: 0;
+				@include transition(0);
+				li + li {
+					margin-top: 0;
+				}
+
+			}
+		}
+	}
+}
+
+/*================  CURRENCY AND LANGUAGE BOXES ===============*/
+.box-language .toggle,
+.box-currency .toggle {
+  display: block;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-top:8px;
+  line-height: 28px;
+  @media (min-width: 768px) {
+	@include transition(.3s all ease);
+  }
+  &_cont {
+    left: 0;
+    right: auto;
+	[dir="rtl"] & {
+		left: auto;
+		right: 0;
+	}
+  }
+  &:after {
+    display: inline-block;
+    content: '\e5c5';
+    margin-left: 2px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: $material;
+    vertical-align: middle;
+  }
+  &.active, &:hover {
+    color: $primary;
+  }
+}
+
+/*========================================================
+               Responsive Header styles
+=========================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.header-wishlist {
+		margin-top: 6px;
+		margin-left: 25px;
+		strong {
+			font-size: 16px;
+		}
+	}
+	header .nav {
+		> .toggle_cont > li {
+		}
+	}
+	.header-settings .tx-phone {
+		font-size: 20px;
+		margin-left: 15px;
+	}
+	html[lang="ru"] {
+		.header-wishlist span {
+			font-size: 11px;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) { 
+	header h1.logo {
+		max-width:30%;
+	}
+	nav.nav > .toggle_cont > li {
+		padding-left:25px;
+		padding-right:25px;
+	}
+	.header-wishlist {
+		margin-top: 9px;
+		margin-left: 15px;
+		line-height: 1em;
+		strong {
+			display:inline-block;
+		}
+		span {
+			font-size: 11px;
+		}
+		i {
+			font-size: 18px;
+			margin-top:0;
+			margin-right:7px;
+		}
+		strong {
+			font-size: 14px;
+		}
+	}
+	html[lang="ru"] {
+		.header-wishlist span {
+			font-size: 10px;
+		}
+	}
+	header .nav {
+		> .toggle_cont > li {
+			> a {
+				font-size: 14px;
+				i {
+					margin-right: 4px;
+				}
+			}
+		}
+	}
+	.header-settings .tx-phone {
+		font-size: 18px;
+		margin-left: 10px;
+		i {
+			font-size: 18px;
+			vertical-align: middle;
+		}
+	}
+	header .box-language + .box-currency, 
+	header .box-currency + .box-language {
+		margin-left: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	header {
+		.search {
+			float: none;
+		}
+		.logo {
+			margin: 0 0 25px;
+			img {
+				display: inline-block;
+			}
+		}
+		.box-cart {
+			float: none;
+			margin-top: 0;
+		}
+		nav.nav {
+			.toggle_cont {
+				top: 100%;
+				.pull-right {
+					width:100%;
+				}
+			}
+		}
+		.box-currency, .box-language,
+		.box-language + .box-currency, 
+		.box-currency + .box-language {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+	.header-top {
+		text-align:center;
+	}
+	.toggle_cont > li {
+		> a, > button {
+			font-size: 11px;
+		}
+	}
+	div.box-language, div.box-currency {
+		display:inline-block;
+		float:none !important;
+		font-size: 11px;
+		.toggle {
+			margin-top: 0;
+		}
+	}
+	.header-wishlist {
+		display:inline-block;
+		margin: 5px 0 5px 15px;
+	}
+	.header-settings {
+		display:inline-block;
+		float:none !important;
+		font-size: 11px;
+		margin-left:5px;
+		margin-right:5px;
+		.tx-phone {
+			font-size: 18px;
+			margin-left: 15px;
+			i {
+				font-size: 20px;
+				margin-bottom:0;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	header {
+		text-align:center;
+		h1.logo {
+			float:none;
+			text-align:center;
+		}		
+	}
+	.header-top {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	span.header-settings {
+		display:inline-block;
+		width:100%;
+		float:none !important;
+		.tx-phone {
+			display:inline-block;
+			width:100%;
+			margin-left:0;
+			margin-top:10px;
+			i {
+				font-size: 18px;
+			}
+		}
+	}
+	span.header-wishlist {
+		margin-left:0;
+		float:none !important;
+		text-align: left;
+	}
+}

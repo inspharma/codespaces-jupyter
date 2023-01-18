@@ -1,0 +1,136 @@
+//--------------------------------------------------------------
+//                    Owl Carousel Module
+//--------------------------------------------------------------
+
+div.swiper-container {
+	border-radius:0;
+	margin-bottom:0;
+}
+
+.swiper-wrapper {
+	margin-bottom:0;
+}
+
+div.swiper-container {
+	position: static;	
+	width: auto;
+	box-shadow:none;
+	background:none;
+	border:none;
+	.swiper-slide {
+		padding: 0 15px;
+		width: auto;
+	}
+}
+
+.swiper-container-horizontal {
+	overflow:hidden;
+}
+
+// Navigation
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev,
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+	background-image: none !important;
+}
+
+div.swiper-button-prev:before {
+	content: "\e5cb";
+}
+div.swiper-button-next:before {
+	content: "\e5cc";
+}
+
+div.swiper-button-prev, 
+div.swiper-button-next {
+	background-image:none;
+	&:before {
+		font-size: inherit;
+		line-height: inherit;
+		font-family:$material;
+		color:inherit;
+		width:auto;
+		height:auto;
+	}
+	&.swiper-button-disabled {
+		display:none;
+	}
+} 
+
+.swiper-container {
+	div.swiper-button-prev, div.swiper-button-next {
+		left: auto;
+		right: 22px;
+		@media (max-width: 767px) {
+			transition:none;
+		}
+		aside &, #column-left &, #column-right &, .col-sm-3 &, .related-block &, .testimonials & {
+			right: 5px;
+		}
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		font-size: 28px;
+		background: #F5F5F5;
+		color: rgba(51, 51, 51, 0.22);
+		@include border-radius(3px);
+		position: absolute;
+		z-index:2;
+		cursor:pointer;
+		top: 50%;
+		.related-block & {
+			top: 40%;
+		}
+		display:inlibe-block;
+		text-align:center;		
+		opacity: 1;		
+		&.disabled {
+			opacity: 0;
+			pointer-events:none;
+		}
+		&:hover {
+			color:$textPrimary;		
+		}
+		&.disabled, &.swiper-button-disabled {
+			opacity: 0;
+			pointer-events:none;
+		}
+	}
+	.swiper-button-prev {
+		left: 0;
+		aside &, #column-left &, #column-right &, .col-sm-3 &, .related-block &, .testimonials & {
+			right: auto;
+			left: 5px;
+		}
+	}
+	.swiper-button-next {
+		right: 0;
+	}
+	&:hover {
+		div.swiper-button-prev, div.swiper-button-next {
+			opacity: 1;
+			&.disabled, &.swiper-button-disabled {
+				opacity: 0;
+				pointer-events:none;
+			}
+		}
+	}
+	@media (max-width: 767px) {
+		.swiper-slide {
+			padding-left:20px;
+			padding-right:20px;
+		}
+	}
+}
+
+
+.zemez-box-slider {
+	.swiper-wrapper, .swiper-slide {
+		height:auto;
+	}
+}
+
+.swiper-button-disabled {
+	display:none;
+}

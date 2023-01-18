@@ -1,0 +1,38 @@
+//--------------------------------------------------------------
+//                    Variables
+//--------------------------------------------------------------
+
+
+
+//Backgrounds
+$headerBg: #fff;
+$contentBg: #fff;
+$footerBg: #fff;
+$baseBg: $footerBg;
+$block-bg: #5ec0fd;
+
+// Fonts
+$baseFontFamily: 'Ubuntu', sans-serif;
+$baseFontSize: 14px;
+$baseLineHeight: 24px;
+$baseFont: 300 #{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+
+// Colors
+$baseColor: #777;
+$primary: #98d648;
+$secondary: #5ec0fd;
+$textPrimary: #333;
+$borderColor: #eeeeee;
+$stockBg: #f9f9f9;
+$stockBgHover: darken(saturate(adjust_hue($stockBg, 0), 0%), 3.1372549019607874%);
+
+$tabs-color: #999999;
+
+$white: #fff;
+
+
+// Border-radius
+$baseBorderRadius: 3px;
+
+//Box Shadow
+$baseBoxShadow: 1px 1px 8px rgba($textPrimary,.25);

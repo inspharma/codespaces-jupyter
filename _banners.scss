@@ -1,0 +1,235 @@
+/*========================================================
+                      Banners
+=========================================================*/
+
+.banners > div {
+	margin-bottom:30px;
+	.banner-box {
+		position: relative;
+		> a {
+			display: block;
+		}
+	}
+}
+
+.banners .banner-box {	
+	overflow:hidden;
+	color:#fff;
+	background:$primary;	
+	@include border-radius(3px);
+	@media (min-width: 768px) {
+		@include transition(.5s background-color ease);
+	}
+	.link {
+		position:absolute;
+		z-index:1;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		display:inline-block;
+		content:'';
+	}
+	&:hover {
+		background:darken($primary,5%);
+	}
+}
+
+.banners .background-secondary .banner-box {
+	background:$secondary;
+	&:hover {
+		background:darken($secondary,5%);
+	}
+}
+
+.banners > div .s-desc {
+	position: absolute;
+    text-align: center;	
+	left:5%;
+	right:5%;
+	top:12%;
+	&,h1,h2,h3,h4,h5,h6,p {
+		color:#fff;
+		font-family: $baseFontFamily;
+		margin-bottom:0;
+	}
+	i {
+		font-size: 54px;
+		height: 54px;
+		margin-left:-10px;
+		margin-right:10px;
+		line-height: 1em;
+		display: inline-block;
+		vertical-align: top;
+		font-weight: 400;
+		margin-bottom:7px;
+	}
+	h3, h5 {
+		text-transform:none;
+	}
+	h1 {
+		font-size:70px;
+		font-weight:700;
+	}
+	h2 {
+		font-size:66px;
+		line-height:1em;
+		font-weight:700;
+		margin-bottom:10px;
+	}
+	h3 {
+		font-size:44px;
+		font-weight:500;
+		margin-bottom:8px;
+		display:inline-block;
+	}
+	h4 {
+		font-size: 34px;
+		line-height: 40px;
+		font-weight: 500;
+	}
+	h5 {
+		font-size:26px;
+		font-weight:400;
+		margin-bottom:15px;
+	}
+	h6 {
+		font-size:16px;
+		font-weight:300;
+		text-transform: uppercase;
+	}
+	p {
+		font-size:16px;
+	}
+}
+
+.banner-2 .banner-box .s-desc {
+	top:14%;
+	left: 7%;
+}
+
+
+/*========================================================
+                   Responsive Banners
+=========================================================*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.banners > div .s-desc {
+		i {
+			font-size: 42px;
+			height: 42px;
+			margin-bottom: 5px;
+		}
+		h1 {
+			font-size:58px;
+		}
+		h2 {
+			font-size:50px;
+			margin-bottom: 5px;
+		}
+		h3 {
+			font-size:33px;
+			margin-bottom: 5px;
+		}
+		h4 {
+			font-size:30px;
+		}
+		h5 {
+			font-size:24px;
+			margin-bottom: 10px;
+		}
+		h6 {
+			font-size:14px;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.banners > div .s-desc {
+		top: 10%;
+		i {
+			font-size: 28px;
+			height: 28px;
+			margin-left: -5px;
+			margin-right: 5px;
+		}
+		h1 {
+			font-size:46px;
+		}
+		h2 {
+			font-size:38px;
+			margin-bottom: 8px;
+		}
+		h3 {
+			font-size:22px;
+		}
+		h4 {
+			font-size:20px;
+			line-height:1.2em;
+		}
+		h5 {
+			font-size:19px;
+			margin-bottom: 8px;
+		}
+		h6 {
+			font-size:11px;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+	.banner-2 .banner-box .s-desc {
+		top: 10%;
+	}
+}
+
+@media (max-width: 767px) {
+	.banners {
+		text-align:center;
+		> div {
+			display: inline-block;
+			max-width: 100%;	
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.banners > div .s-desc {
+		top: 50%;
+		margin-top:-40px;
+		i {
+			font-size: 28px;
+			height: 28px;
+			margin-left: -5px;
+			margin-right: 5px;
+		}
+		h1 {
+			font-size:46px;
+		}
+		h2 {
+			font-size:38px;
+			margin-bottom: 8px;
+		}
+		h3 {
+			font-size:22px;
+		}
+		h4 {
+			font-size:20px;
+			line-height:1.2em;
+		}
+		h5 {
+			font-size:19px;
+			margin-bottom: 8px;
+		}
+		h6 {
+			font-size:11px;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+	.banner-2 .banner-box .s-desc {
+		top: 50%;
+	}
+}
+

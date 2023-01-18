@@ -1,0 +1,99 @@
+#page {
+	background: $contentBg;
+	overflow: hidden;
+}
+@media (max-width: 767px) {
+	#content{
+		padding-bottom: 20px;
+	}
+}
+
+aside {	
+	ul li > a {
+		&:hover {
+			color: #bc2029;
+		}
+	}	
+}
+
+aside, .col-sm-3 {
+	.col-sm-4 {
+		width:100%;
+	}
+}
+
+
+/*==================  Marked List  ======================*/
+.box.account ul, .box.affilate ul {
+	padding: 0;
+	list-style-type: none;
+	li + li{
+		border-top: 1px solid $borderColor;
+	}
+	a {
+		position: relative;
+		background: $stockBg;
+		display: block;
+		padding: 13px 15px;
+		&:hover{
+			background: $stockBgHover;
+		}
+
+	}
+	a:hover {
+		color: $primary;
+	}
+}
+
+.manufacturer-content div {
+	margin:0;
+}
+
+.manufacturer-content div, #content ul.list-unstyled {
+	list-style-type: none;
+	li + li {
+		margin-top: 10px;
+	}
+	a {
+		position: relative;
+		display:inline;
+		&:before {
+			content: '\f105';
+			margin-right: 5px;
+			font-size:12px;
+			font-weight: 400;
+			font-family: $fa;
+			color: $primary;
+		}
+	}
+}
+
+#content .product-info ul.list-unstyled a:before{
+	display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+	#common-home #content {
+		padding-bottom: 0;
+	}
+	aside {
+		margin-top: 20px;
+		.container{
+			padding: 0;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	
+}
